@@ -1,0 +1,72 @@
+/*  Base Theme Defaults
+-------------------------------------------------- */
+
+/* Helpers */
+.w-100 {
+	width: 100%;
+}
+
+%bullet-style {
+	ul,
+	ol {
+		margin-bottom: 0;
+
+		li::before {
+			content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+			color: $primary-color; /* Change the color */
+			font-weight: bold; /* If you want it to be bold */
+			display: inline-block; /* Needed to add space between the bullet and the text */
+			width: 0.7em; /* Also needed for space (tweak if needed) */
+			margin-left: -0.7em; /* Also needed for space (tweak if needed) */
+		}
+	}
+}
+
+.one-list {
+	@extend %bullet-style;
+}
+
+.two-lists {
+	@extend %bullet-style;
+	@include breakpoint(large) {
+		column-count: 2;
+		column-gap: 52px;
+	}
+}
+
+%bottom-spacing {
+	margin-bottom: $section-space-small * 2;
+
+	@include breakpoint(large) {
+		margin-bottom: $section-space-large * 2;
+	}
+}
+
+/* Components */
+.card {
+	height: 100%;
+	justify-content: space-between;
+
+	&__title {
+		@media (min-width: map-get($breakpoints, large)) {
+			font-size: 48px;
+		}
+	}
+
+	&__button {
+		@include button;
+		width: 100%;
+		color: $white;
+		font-weight: bold;
+		text-align: center;
+		border-radius: $global-radius;
+		background-color: $warning-color !important;
+	}
+}
+
+.background-banner {
+	min-height: 70vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+}

@@ -1,0 +1,61 @@
+{
+	"name": "bone-health",
+	"version": "1.0.0",
+	"description": "A GiantSquid theme using Foundation 6 for Bone Health Australia",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/renansigolo/bone-health.git"
+	},
+	"author": "Renan Sigolo",
+	"homepage": "https://renansigolo.com",
+	"license": "UNLICENSED",
+	"scripts": {
+		"clean": "rm -rf node_modules package-lock.json",
+		"clean:install": "npm run clean && npm i",
+		"build": "gulp",
+		"scripts": "gulp scripts",
+		"styles": "gulp styles",
+		"images": "gulp images",
+		"watch": "gulp watch",
+		"browsersync": "gulp browsersync",
+		"start": "npm run browsersync",
+		"fix:php": "phpcbf --colors --standard=WordPress --ignore=node_modules/ --extensions=php *",
+		"lint:php": "phpcs --colors --standard=WordPress --ignore=node_modules/ --extensions=php *",
+		"update-foundation": "npm install foundation-sites"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^5.15.2",
+		"jquery": "^2.2.4",
+		"jshint": "^2.12.0",
+		"require.js": "^1.0.0",
+		"tiny-slider": "^2.9.3"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-es2015": "^6.24.1",
+		"browser-sync": "^2.26.13",
+		"foundation-sites": "^6.6.3",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-babel": "^7.0.1",
+		"gulp-concat": "^2.6.1",
+		"gulp-cssnano": "^2.1.3",
+		"gulp-filter": "^6.0.0",
+		"gulp-imagemin": "^7.1.0",
+		"gulp-jshint": "^2.1.0",
+		"gulp-load-plugins": "2.0.5",
+		"gulp-newer": "^1.4.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-sass": "^4.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-touch-cmd": "^0.0.1",
+		"gulp-uglify": "^3.0.2",
+		"gulp-util": "^3.0.8",
+		"gulp-wp-pot": "^2.5.0",
+		"jshint-stylish": "^2.2.1",
+		"motion-ui": "^2.0.3",
+		"what-input": "^5.2.10"
+	},
+	"browserslist": "defaults"
+}

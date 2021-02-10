@@ -1,0 +1,108 @@
+/*  Footer
+-------------------------------------------------- */
+.footer {
+	clear: both;
+	padding: 64px 0;
+	background-color: $primary-color;
+	color: $white;
+
+	&__logo {
+		margin-bottom: 48px;
+
+		@include breakpoint(large) {
+			margin-bottom: 64px;
+		}
+	}
+
+	&__partner-logo {
+		margin-top: 48px;
+		margin-bottom: 24px;
+		max-height: 200px;
+
+		@include breakpoint(large) {
+			margin-top: unset;
+			margin-bottom: unset;
+			align-self: flex-start;
+		}
+	}
+
+	#menu-footer {
+		color: inherit;
+		flex-direction: column;
+
+		@include breakpoint(large) {
+			li:first-child {
+				a {
+					padding-top: 0;
+				}
+			}
+		}
+
+		a {
+			color: inherit;
+			padding-left: 0;
+			padding-right: 0;
+			font-size: 19px;
+
+			@include breakpoint(large) {
+				font-size: 22px;
+				white-space: nowrap;
+			}
+
+			&:hover {
+				color: $warning-color;
+			}
+		}
+	}
+
+	&__copyright {
+		font-size: 22px;
+		margin-bottom: 16px;
+	}
+
+	&__disclaimer {
+		@include breakpoint(large) {
+			max-width: 68%;
+		}
+	}
+
+	&__social-media {
+		margin: 24px 0 58px;
+
+		a {
+			color: $white;
+
+			&:hover {
+				color: $warning-color;
+			}
+		}
+	}
+
+	&__links {
+		white-space: nowrap;
+		font-size: 17px;
+
+		a {
+			color: $white;
+
+			&:hover {
+				color: $warning-color;
+			}
+		}
+
+		span {
+			padding: 0 8px;
+		}
+	}
+
+	.mobile-footer {
+		&__copyright {
+			margin: 48px 0 24px 0;
+			font-size: 19px;
+		}
+
+		&__disclaimer {
+			font-size: 16px;
+		}
+	}
+}

@@ -1,0 +1,109 @@
+/*  Base Theme Defaults
+-------------------------------------------------- */
+
+/* TO BE REMOVED */
+// .cell {
+// 	border: 1px solid red;
+// }
+
+/* Variables */
+
+// Color Palette
+$gray-border: #e7eaf0;
+$bg-gray: #fafbfc;
+$bg-gray-map: #f9fafb;
+$gray-chevron: #8c9bb5;
+$odd-row: #f9f4f8;
+$even-row: #efeef5;
+
+// Spacing
+$section-space-base: 16px;
+$section-space-small: 28px;
+$section-space-large: 40px;
+
+/* Guttenberg Colors */
+$colors: (
+	blue: #1b386d,
+	cyan: #298bcf,
+	orange: #f99d1c,
+	lime: #95c93d,
+	pink: #e66ca9,
+	mauve: #9078b7,
+	gray: #d8d8d8,
+	light-gray: #fafbfc,
+	medium-gray: #e7eaf0,
+	dark-gray: #333333,
+	black: #0a0a0a,
+	white: #ffffff,
+);
+
+// For each key in the map, created an own class
+@each $name, $value in $colors {
+	// Create compatible Guttenberg Colors
+	.has-#{$name}-background-color {
+		background-color: $value;
+	}
+
+	.has-#{$name}-color {
+		color: $value;
+	}
+
+	// Create background colours classes
+	.bg-#{$name} {
+		background-color: $value;
+
+		.accordion-title {
+			&:hover,
+			&:focus {
+				color: $white;
+				background-color: scale-color($value, $lightness: -15%);
+			}
+		}
+	}
+
+	// Create generic text classes
+	.text-#{$name} {
+		color: $value;
+	}
+}
+
+// Padding Classes
+$spaces: (
+	none: 0,
+	small: 24px,
+	medium: 56px,
+	large: 80px,
+);
+
+@each $name, $value in $spaces {
+	.py-#{$name} {
+		padding-top: $value;
+		padding-bottom: $value;
+	}
+
+	.pt-#{$name} {
+		padding-top: $value;
+	}
+	.pb-#{$name} {
+		padding-bottom: $value;
+	}
+
+	.mx-#{$name} {
+		margin-left: $value;
+		margin-right: $value;
+	}
+	.my-#{$name} {
+		margin-top: $value;
+		margin-bottom: $value;
+	}
+	.mt-#{$name} {
+		margin-top: $value;
+	}
+	.mb-#{$name} {
+		margin-bottom: $value;
+	}
+}
+// .bg-light-gray {
+// 	border-top: 1px solid $medium-gray;
+// 	border-bottom: 1px solid $medium-gray;
+// }
